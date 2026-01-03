@@ -1,0 +1,11 @@
+package landingpage
+
+import "cshop-website/view/layout"
+import "cshop-website/model"
+
+templ featureCardsGroup(content model.Content) {
+// Loop through the Features slice
+    for _, feature := range content.Features {
+        @layout.FeatureCard(feature.Emoji, feature.Title, feature.Desc)
+    }
+}

@@ -1,0 +1,106 @@
+package layout
+
+templ LanguageSwitcher(lang string) {
+	<div
+		class="relative inline-block"
+		data-lang-switcher
+	>
+		<button
+			type="button"
+			class="
+				inline-flex items-center gap-2
+				h-9 px-3
+				rounded-md border border-neutral-200
+				bg-white text-sm font-medium text-neutral-700
+				hover:bg-neutral-50
+				focus:outline-none focus:ring-2 focus:ring-neutral-400
+			"
+			aria-haspopup="menu"
+			aria-expanded="false"
+			onclick="toggleLangMenu(this)"
+		>
+			<!-- Globe (lucide style) -->
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				class="h-4 w-4"
+			>
+				<circle cx="12" cy="12" r="10"/>
+				<path d="M2 12h20"/>
+				<path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"/>
+			</svg>
+
+			<span>{ lang }</span>
+		</button>
+
+		<div
+			class="
+				absolute right-0 z-50 mt-2 w-36
+				origin-top-right
+				rounded-md border border-neutral-200
+				bg-white shadow-md
+				opacity-0 scale-95 pointer-events-none
+				transition-all duration-150
+			"
+			role="menu"
+		>
+			<a
+				href="?lang=en"
+				class="block px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none"
+				role="menuitem"
+				tabindex="-1"
+			>
+				English
+			</a>
+			<a
+				href="?lang=ar"
+				class="block px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none"
+				role="menuitem"
+				tabindex="-1"
+			>
+				العربية
+			</a>
+		</div>
+	</div>
+
+	<script>
+		function toggleLangMenu(btn) {
+			const root = btn.closest('[data-lang-switcher]');
+			const menu = root.querySelector('[role="menu"]');
+			const open = menu.classList.contains('opacity-100');
+
+			closeAllLangMenus();
+
+			if (!open) {
+				menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+				menu.classList.add('opacity-100', 'scale-100');
+				btn.setAttribute('aria-expanded', 'true');
+				menu.querySelector('[role="menuitem"]').focus();
+			}
+		}
+
+		function closeAllLangMenus() {
+			document.querySelectorAll('[data-lang-switcher] [role="menu"]').forEach(menu => {
+				menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+				menu.classList.remove('opacity-100', 'scale-100');
+			});
+			document.querySelectorAll('[data-lang-switcher] button')
+				.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+		}
+
+		document.addEventListener('click', (e) => {
+			if (!e.target.closest('[data-lang-switcher]')) {
+				closeAllLangMenus();
+			}
+		});
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') {
+				closeAllLangMenus();
+			}
+		});
+	</script>
+}

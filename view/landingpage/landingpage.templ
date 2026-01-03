@@ -1,0 +1,33 @@
+package landingpage
+
+import "cshop-website/view/layout"
+import "cshop-website/model"
+
+templ Show(lang string, content model.Content) {
+
+			@layout.Base(lang, content) {
+            <section class="section-hero">
+				<div class="container-main">
+					<h1 class="app-name">
+						{ content.Title  }
+					</h1>
+					<p class="app-description">
+						{ content.Description  }
+					</p>
+
+                    @appStores(content)
+
+				</div>
+			</section>
+
+			<section class="section-sub-hero">
+				<div class="container-sub-main">
+					<div class="app-features-cards">
+						
+                       @featureCardsGroup(content)
+
+					</div>
+				</div>
+			</section>
+}
+}

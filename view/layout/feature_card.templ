@@ -1,0 +1,12 @@
+package layout
+
+// Helper component for Features to keep code clean
+templ FeatureCard(emoji, title, desc string) {
+	<div class="feature-card">
+		<span class="feature-card-emoji">{ emoji }</span>
+		<h3 class="feature-card-text">{ title }</h3>
+		<p class="feature-card-describtion">
+			{ desc }
+		</p>
+	</div>
+}

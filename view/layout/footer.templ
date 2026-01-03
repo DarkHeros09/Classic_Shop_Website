@@ -1,0 +1,18 @@
+package layout
+
+import "cshop-website/model"
+
+templ Footer(content model.Content) {
+    <footer class="footer-shortcut">
+    <div class="footer-container">
+        <p class="footer-text">
+            {  content.FooterText  }
+        </p>
+        <div class="footer-links-space">
+            <a href="/terms">{ content.FooterTerms }</a>
+            <a href="/privacy">{ content.FooterPrivacy }</a>
+        </div>
+    </div>
+    </footer>
+
+}

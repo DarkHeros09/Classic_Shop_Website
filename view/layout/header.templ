@@ -1,0 +1,25 @@
+package layout
+
+templ Header() {
+    		<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="alternate" hreflang="en" href="https://classic-shop.ly/en" />
+    <link rel="alternate" hreflang="ar" href="https://classic-shop.ly/ar" />
+    <link rel="alternate" hreflang="x-default" href="https://classic-shop.ly/en" />
+			<title>Classic</title>
+            <script defer src="/assets/js/cdn.min.js"></script>
+			<script>
+        // 1. Theme Logic: Apply 'dark' class immediately
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark' || (!theme && true)) { // defaults to true (dark)
+                document.documentElement.classList.add('dark');
+            } else if (theme === 'light') {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+            <link rel="stylesheet" href="/assets/css/input.css">
+			<link rel="preload" href="/assets/fonts/noto-kufi-arabic-regular.woff2" as="font" type="font/woff2" crossorigin />
+			<link rel="preload" href="/assets/fonts/noto-kufi-arabic-bold.woff2" as="font" type="font/woff2" crossorigin />
+}
