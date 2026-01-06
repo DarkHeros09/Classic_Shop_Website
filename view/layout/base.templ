@@ -5,26 +5,32 @@ import "cshop-website/utils"
 
 templ Base(lang string, content model.Content, data ...any) {
 	<!DOCTYPE html>
-	<html lang={ lang } dir={ utils.GetDir(lang) } class="dark"
-        x-data="{ 
+	<html
+		lang={ lang }
+		dir={ utils.GetDir(lang) }
+		class="dark"
+		x-data="{ 
             isDark: localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true 
         }"
-        :class="{ 'dark': isDark }"
-        x-effect="localStorage.setItem('theme', isDark ? 'dark' : 'light')">
-
+		:class="{ 'dark': isDark }"
+		x-effect="localStorage.setItem('theme', isDark ? 'dark' : 'light')"
+	>
 		<head>
-        <link rel="icon" type="image/png" href="/assets/png/logo.png" />
-            @Header()
-        </head>
+			@Header()
+		</head>
+		<body class="body-shortcut">
+        
+			<header class="header-shortcut">
+				<div class="header-container">
+					@Logo(lang, content)
+					@OptionsButtons(lang)
+				</div>
+			</header>
 
-<body class="body-shortcut"> 
-    @Logo(lang, content)
-    @OptionsButtons(lang)
-    { children... }
-</body>
-
-    <footer class="footer-shortcut">
-    @Footer(lang, content)
-    </footer>
-</html>
+			{ children... }
+		</body>
+		<footer class="footer-shortcut">
+			@Footer(lang, content)
+		</footer>
+	</html>
 }

@@ -11,6 +11,8 @@ import (
 func main() {
 	app := fiber.New()
 
+	app.Static("/assets", "./assets")
+
 	// Secure your Fiber app by adding security headers
 	app.Use(helmet.New(helmet.ConfigDefault))
 
@@ -18,8 +20,6 @@ func main() {
 	app.Use(compress.New(compress.Config{
 		Level: compress.LevelBestSpeed, // 1
 	}))
-
-	app.Static("/assets", "./assets")
 
 	// // Or extend your config for customization
 	// app.Use(favicon.New(favicon.Config{

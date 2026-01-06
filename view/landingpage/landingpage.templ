@@ -4,41 +4,37 @@ import "cshop-website/view/layout"
 import "cshop-website/model"
 
 templ Show(lang string, content model.Content) {
+	@layout.Base(lang, content) {
+		<section class="section-hero container-main">
+			<div class="hero-image-container">
+				<img
+					src="/assets/png/mockup.png"
+					alt="Classic App Mockup"
+					class="block w-[80%] md:w-[100%] h-auto"
+					loading="eager"
+				/>
+			</div>
 
-			@layout.Base(lang, content) {
-            <section class="section-hero">
-				<div class="container-main">
-					<h1 class="app-name">
-						{ content.Title  }
-					</h1>
-					<p class="app-description">
-						{ content.Description  }
-					</p>
+			<div class="hidden md:block md:w-8 shrink-0"></div>
 
-					<div class="flex justify-center items-center">
-    <img 
-        src="/assets/png/mockup-iphone-17-pro-desert-titanium.png" 
-        alt="Classic App Mockup" 
-        class="block w-[40%] h-auto"
-        loading="eager"
-    />
-</div>
-		<div class="py-8">
-			
-		</div>
-                    @appStores(content)
-
+			<div class="hero-content">
+				<h1 class="app-name">
+					{ content.Title }
+				</h1>
+				<p class="app-description">
+					{ content.Description }
+				</p>
+				<div class="app-stores">
+					@appStores(lang, content)
 				</div>
-			</section>
-
-			<section class="section-sub-hero">
-				<div class="container-sub-main">
-					<div class="app-features-cards">
-						
-                       @featureCardsGroup(content)
-
-					</div>
+			</div>
+		</section>
+		<section class="section-sub-hero">
+			<div class="container-sub-main">
+				<div class="app-features-cards">
+					@featureCardsGroup(content)
 				</div>
-			</section>
-}
+			</div>
+		</section>
+	}
 }

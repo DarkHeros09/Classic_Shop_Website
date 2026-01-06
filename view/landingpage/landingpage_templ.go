@@ -44,14 +44,14 @@ func Show(lang string, content model.Content) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"section-hero\"><div class=\"container-main\"><h1 class=\"app-name\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"section-hero container-main\"><div class=\"hero-image-container\"><img src=\"/assets/png/mockup.png\" alt=\"Classic App Mockup\" class=\"block w-[80%] md:w-[100%] h-auto\" loading=\"eager\"></div><div class=\"hidden md:block md:w-8 shrink-0\"></div><div class=\"hero-content\"><h1 class=\"app-name\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(content.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 12, Col: 21}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 22, Col: 20}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -64,21 +64,21 @@ func Show(lang string, content model.Content) templ.Component {
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(content.Description)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 15, Col: 27}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 25, Col: 26}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</p><div class=\"flex justify-center items-center\"><img src=\"/assets/png/mockup-iphone-17-pro-desert-titanium.png\" alt=\"Classic App Mockup\" class=\"block w-[40%] h-auto\" loading=\"eager\"></div><div class=\"py-8\"></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</p><div class=\"app-stores\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = appStores(content).Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = appStores(lang, content).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "</div></section><section class=\"section-sub-hero\"><div class=\"container-sub-main\"><div class=\"app-features-cards\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "</div></div></section><section class=\"section-sub-hero\"><div class=\"container-sub-main\"><div class=\"app-features-cards\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

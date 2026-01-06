@@ -44,7 +44,7 @@ func Show(lang string, content model.Content, terms model.TermsPageData) templ.C
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, " <div class=\"container-main py-24 px-6 md:px-12 max-w-4xl mx-auto\"><div class=\"mb-16 border-b border-border pb-10\"><div class=\"flex items-center gap-2 mb-6\"><span class=\"text-sm text-muted-foreground font-sans\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, " <div class=\"container-main py-24 px-6 md:px-12 max-w-4xl mx-auto\"><div class=\"mb-16 border-b border-border pb-10\"><div class=\"flex items-center gap-2 mb-6\"><span class=\"text-sm text-muted-foreground \">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -70,7 +70,7 @@ func Show(lang string, content model.Content, terms model.TermsPageData) templ.C
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</h1><p class=\"text-lg md:text-xl text-muted-foreground leading-relaxed font-sans\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</h1><p class=\"text-lg md:text-xl text-muted-foreground leading-relaxed \">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -88,7 +88,7 @@ func Show(lang string, content model.Content, terms model.TermsPageData) templ.C
 				return templ_7745c5c3_Err
 			}
 			for _, section := range terms.Sections {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<section class=\"group\"><h2 class=\"text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300 font-sans\">")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<section class=\"group\"><h2 class=\"text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300 \">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -101,7 +101,7 @@ func Show(lang string, content model.Content, terms model.TermsPageData) templ.C
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "</h2><p class=\"text-base md:text-lg text-muted-foreground/90 leading-8 mb-4 font-sans\">")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "</h2><p class=\"text-base md:text-lg text-muted-foreground/90 leading-8 mb-4 \">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -124,14 +124,14 @@ func Show(lang string, content model.Content, terms model.TermsPageData) templ.C
 						return templ_7745c5c3_Err
 					}
 					for _, item := range section.List {
-						templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "<li class=\"flex items-start gap-3 text-muted-foreground text-base leading-7\"><div class=\"mt-2.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0\"></div><span class=\"font-sans\">")
+						templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "<li class=\"flex items-start gap-3 text-muted-foreground text-base leading-7\"><div class=\"mt-2.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0\"></div><span class=\"\">")
 						if templ_7745c5c3_Err != nil {
 							return templ_7745c5c3_Err
 						}
 						var templ_7745c5c3_Var8 string
 						templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(item)
 						if templ_7745c5c3_Err != nil {
-							return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/termspage/terms_page.templ`, Line: 48, Col: 70}
+							return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/termspage/terms_page.templ`, Line: 48, Col: 61}
 						}
 						_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 						if templ_7745c5c3_Err != nil {

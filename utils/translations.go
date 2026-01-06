@@ -7,10 +7,6 @@ var Translations = map[string]model.Content{
 	"ar": {
 		Title:       "كلاسيك",
 		Description: "نصائح برمجية صغيرة ومفيدة لمطوري فلاتر ودارت. تصفح أكثر من 250 نصيحة برمجية بكل سهولة.",
-		DownloadOn:  "حمل من",
-		AppStore:    "متجر التطبيقات",
-		GetItOn:     "متوفر على",
-		GooglePlay:  "جوجل بلاي",
 		LangToggle:  "English",
 		TargetLang:  "en",
 		Features: []model.FeatureData{
@@ -42,10 +38,6 @@ var Translations = map[string]model.Content{
 	"en": {
 		Title:       "Classic",
 		Description: "Bite-sized tips and tricks about Dart and Flutter development. Browse over 250 tips easily.",
-		DownloadOn:  "Download on",
-		AppStore:    "App Store",
-		GetItOn:     "Get it on",
-		GooglePlay:  "Google Play",
 		LangToggle:  "العربية",
 		TargetLang:  "ar",
 		Features: []model.FeatureData{

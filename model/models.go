@@ -3,10 +3,6 @@ package model
 type Content struct {
 	Title         string
 	Description   string
-	AppStore      string
-	GooglePlay    string
-	DownloadOn    string
-	GetItOn       string
 	LangToggle    string
 	TargetLang    string
 	FooterText    string

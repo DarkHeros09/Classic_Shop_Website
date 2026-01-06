@@ -6,13 +6,11 @@ import {
 export default defineConfig({
   presets: [
     presetWind3({
-      dark: 'class', // This tells UnoCSS to look for the .dark class on <html>
+      dark: 'class',
     }),
   ],
   theme: {
-    // Define your brand colors and semantic tokens here
-  colors: {
-      // These map to the CSS variables defined in preflights below
+    colors: {
       background: 'var(--background)',
       foreground: 'var(--foreground)',
       card: 'var(--card)',
@@ -28,29 +26,18 @@ export default defineConfig({
     },
   },
   shortcuts: [
-    // Use the Array-of-Objects syntax for better reliability in some environments
     {
-            'body-shortcut': 'bg-background text-foreground flex flex-col min-h-screen transition-colors duration-300 font-sans antialiased',
-      
-      'container-main': 'max-w-4xl mx-auto',
-      'section-hero': 'text-center pt-24 pb-20 px-4',
-      
-      // 2. HEADINGS & TEXT
-      'app-name': 'text-5xl font-extrabold mb-6 tracking-tight text-foreground',
-      'app-description': 'text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed',
-      
-      // 3. BUTTONS (Shadcn Style)
-      //    Uses 'primary' color (White in Dark mode, Black in Light mode)
-      'app-stores': 'flex flex-col sm:flex-row justify-center gap-4 items-center',
-      'app-store-button': 'inline-flex items-center bg-primary text-primary-foreground h-12 px-6 rounded-lg hover:opacity-90 transition-all active:scale-95 min-w-[180px] no-underline shadow-sm',
-      'app-store-svg': 'w-6 h-6 me-3 fill-current',
-      'app-store-button-text': 'flex flex-col items-start leading-none',
-      'app-store-button-text-1': 'text-[0.65rem] uppercase tracking-wide opacity-80',
-      'app-store-button-text-2': 'font-bold text-base',
-      
-      // 4. CARDS (The Hover Fix)
-      //    border-border: subtle border in both modes
-      //    hover:bg-accent: subtle gray shift in both modes
+      'header-shortcut': 'sticky top-0 z-100 w-full bg-background border-b border-border m-0 p-0 pb-4',
+      'header-container': 'max-w-4xl mx-auto px-6 h-16 flex items-center justify-between',
+      'body-shortcut': 'bg-background text-foreground flex flex-col min-h-screen transition-colors duration-300 font-sans antialiased m-0 p-0',
+      'container-main': 'max-w-4xl mx-auto px-6',
+      'section-hero': 'py-16 md:py-24 flex flex-col-reverse md:flex-row items-center justify-between gap-12',
+      'hero-image-container': 'w-full md:w-1/2 flex justify-center',
+      'hero-content': 'w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-start',
+      'app-name': 'text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-foreground text-center md:text-start',
+      'app-description': 'text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed text-center md:text-start',
+      // Cleaned up shortcut
+      'app-stores': 'flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 w-full mx-auto md:mx-0',
       'section-sub-hero': 'py-20',
       'container-sub-main': 'max-w-6xl mx-auto px-6',
       'app-features-cards': 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
@@ -58,42 +45,38 @@ export default defineConfig({
       'feature-card-emoji': 'text-4xl block mb-4',
       'feature-card-text': 'text-lg font-bold mb-2',
       'feature-card-describtion': 'text-sm text-muted-foreground leading-relaxed',
-
-       'footer-shortcut': 'mt-auto py-10 text-center border-t border-border text-muted-foreground text-sm',
+      'footer-shortcut': 'mt-auto py-10 text-center border-t border-border text-muted-foreground text-sm',
       'footer-container': 'max-w-4xl mx-auto px-4',
       'footer-text': 'mb-2',
-      'footer-links-space': 'flex flex-wrap justify-center gap-x-4 gap-y-2 underline underline-offset-4 text-sm font-medium text-foreground underline underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground', // gap-x-8 provides wide space
-      // 'footer-link': 'text-blue-600 hover:underline',
+      'footer-links-space': 'flex flex-wrap justify-center gap-x-4 gap-y-2 underline underline-offset-4 text-sm font-medium text-foreground underline underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground',
       'control-btn': `
-      inline-flex items-center justify-center rounded-md text-sm font-medium 
-      ring-offset-background transition-colors focus-visible:outline-none 
-      focus-visible:ring-2 focus-visible:ring-offset-2 
-      disabled:pointer-events-none disabled:opacity-50 
-      border border-border bg-background hover:bg-accent hover:text-accent-foreground 
-      h-10 w-10 active:scale-95 border-none bg-transparent shadow-none
-    `,
-    'options-btn': 'fixed top-6 right-6 z-50 flex items-center gap-1 p-1 rounded-lg border border-border bg-background/80 backdrop-blur shadow-sm select-none',
-    'separator': 'w-[1px] h-6 bg-border mx-1',
-    // The "Pill" look for dropdown items
-    'dropdown-menu': `
-      absolute mt-3 min-w-[10rem] 
-      p-1 rounded-md border border-border bg-card shadow-lg 
-      z-50 flex flex-col overflow-hidden
-      backdrop-blur-md bg-card/95
-    `,
-    'dropdown-item': `
-      flex items-center justify-between w-full px-2 py-2
-      text-sm rounded-sm transition-colors duration-150
-      hover:bg-accent/80 hover:text-accent-foreground
-      cursor-pointer no-underline whitespace-nowrap
-    `,
+        inline-flex items-center justify-center rounded-md text-sm font-medium 
+        ring-offset-background transition-colors focus-visible:outline-none 
+        focus-visible:ring-2 focus-visible:ring-offset-2 
+        disabled:pointer-events-none disabled:opacity-50 
+        border border-border bg-background hover:bg-accent hover:text-accent-foreground 
+        h-10 w-10 active:scale-95 border-none bg-transparent shadow-none
+      `,
+      'options-btn': 'fixed top-6 [right:1.5rem] [left:auto] z-50 flex items-center gap-1 p-1 rounded-lg border border-border bg-background/80 backdrop-blur shadow-sm select-none',
+      'separator': 'w-[1px] h-6 bg-border mx-1',
+      'dropdown-menu': `
+        absolute mt-3 min-w-[10rem] 
+        p-1 rounded-md border border-border bg-card shadow-lg 
+        z-50 flex flex-col overflow-hidden
+        backdrop-blur-md bg-card/95
+      `,
+      'dropdown-item': `
+        flex items-center justify-between w-full px-2 py-2
+        text-sm rounded-sm transition-colors duration-150
+        hover:bg-accent/80 hover:text-accent-foreground
+        cursor-pointer no-underline whitespace-nowrap
+      `,
     },
   ],
   preflights: [
     {
       getCSS: () => `
         :root {
-          /* LIGHT MODE (Zinc/Slate) */
           color-scheme: light;
           --background: #ffffff;
           --foreground: #09090b;
@@ -110,23 +93,47 @@ export default defineConfig({
         }
 
         .dark {
-          /* DARK MODE (Zinc/Slate - Shadcn Style) */
-          color-scheme: dark;
-          --background: #09090b; /* Very dark zinc */
-          --foreground: #fafafa;
-          --card: #09090b;
-          --card-foreground: #fafafa;
-          --border: #27272a;      /* Subtle dark border */
-          --input: #27272a;
-          --primary: #fafafa;     /* White buttons in dark mode */
-          --primary-foreground: #18181b; /* Black text on buttons */
-          --muted: #27272a;
-          --muted-foreground: #a1a1aa;
-          --accent: #27272a;      /* Hover state color */
-          --accent-foreground: #fafafa;
+        color-scheme: dark;
+        /* Lofi Soft Charcoal/Blue - replace #09090b */
+        --background: #1a1b1e; 
+        /* Softer foreground (off-white) - replace #fafafa */
+        --foreground: #d1d5db; 
+        
+        /* Cards slightly lighter than background for depth */
+        --card: #222327;
+        --card-foreground: #e5e7eb;
+        
+        /* Softer borders to reduce the "grid" feel */
+        --border: #2d2e33;
+        --input: #2d2e33;
+        
+        /* Primary buttons: less "piercing" white */
+        --primary: #e5e7eb;
+        --primary-foreground: #1a1b1e;
+        
+        /* Muted elements: softer grays */
+        --muted: #2a2b30;
+        --muted-foreground: #9ca3af;
+        
+        /* Accent/Hover: subtle shift */
+        --accent: #2d2e33;
+        --accent-foreground: #ffffff;
+      }
+
+        /* SYNCED THEME TRANSITION */
+        body, header {
+          background-color: var(--background) !important;
+          transition: background-color 0.3s ease, border-color 0.3s ease !important;
+          margin: 0;
+          padding: 0;
         }
 
-        /* Base Setup */
+        header {
+          position: sticky;
+          top: 0;
+          z-index: 100;
+        }
+
         html {
            color-scheme: dark light;
            scroll-behavior: smooth;
@@ -137,10 +144,8 @@ export default defineConfig({
           -webkit-font-smoothing: antialiased;
         }
 
-        /* Prevent unstyled link colors */
         a { color: inherit; text-decoration: none; }
 
-        /* Arabic Override */
         @font-face {
           font-family: 'NotoArabic';
           src: url('/assets/fonts/noto-kufi-arabic-regular.woff2') format('woff2');
@@ -154,48 +159,52 @@ export default defineConfig({
           font-display: swap;
         }
 
+        .font-arabic {
+          font-family: 'NotoArabic', system-ui, sans-serif !important;
+        }
+
         [dir="rtl"] body {
           font-family: 'NotoArabic', system-ui, sans-serif !important;
         }
 
-      /* Prevent transitions on initial load to stop the "fading" flicker */
-      .preload * {
-        -webkit-transition: none !important;
-        -moz-transition: none !important;
-        -ms-transition: none !important;
-        -o-transition: none !important;
-        transition: none !important;
-      }
+        .preload * {
+          transition: none !important;
+        }
 
-      *, ::before, ::after {
-        box-sizing: border-box;
+        *, ::before, ::after {
+          box-sizing: border-box;
         }
         
-        /* Fix for right-side clipping on small screens */
         .dropdown-menu {
-          /* If right-0 is too aggressive, this acts as a safety */
           transform-origin: top right;
         }
 
-      /* This specifically ensures that the hover effect stays 
-         within the rounded corners of the dropdown-item */
-      .dropdown-item {
-        -webkit-appearance: none;
-        appearance: none;
-        user-select: none;
+        .dropdown-item {
+          -webkit-appearance: none;
+          appearance: none;
+          user-select: none;
+        }
+
+        .fixed.top-6.right-6 {
+          direction: rtl !important;
+          overflow: visible !important; 
+        }
+
+        .options-btn {
+          right: 1.5rem !important; 
+          left: auto !important;
+          direction: rtl !important; /* This keeps icons inside the button from flipping */
+        }
+
+        /* Remove the mobile tap highlight globally */
+      * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none; /* Prevents callout menu on long-press if desired */
       }
 
-     /* Force RTL for the control group */
-      .fixed.top-6.right-6 {
-        direction: rtl !important;
-        /* Ensure children (the menu) aren't clipped */
-        overflow: visible !important; 
-      }
-
-      [x-cloak] { 
-    display: none !important; 
-      }     
-
+        [x-cloak], [un-cloak] { 
+          display: none !important; 
+        }     
       `,
     },
   ],
