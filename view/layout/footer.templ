@@ -1,18 +1,17 @@
 package layout
 
 import "cshop-website/model"
+import "cshop-website/utils"
 
-templ Footer(content model.Content) {
-    <footer class="footer-shortcut">
+templ Footer(lang string, content model.Content) {
     <div class="footer-container">
         <p class="footer-text">
-            {  content.FooterText  }
+           { utils.CurrentYear(content) }
         </p>
         <div class="footer-links-space">
-            <a href="/terms">{ content.FooterTerms }</a>
-            <a href="/privacy">{ content.FooterPrivacy }</a>
+            <a href={ "/" + lang + "/terms" }>{ content.FooterTerms }</a>
+            <a href={ "/" + lang + "/privacy" }>{ content.FooterPrivacy }</a>
         </div>
     </div>
-    </footer>
 
 }

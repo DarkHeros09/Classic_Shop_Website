@@ -59,7 +59,7 @@ export default defineConfig({
       'feature-card-text': 'text-lg font-bold mb-2',
       'feature-card-describtion': 'text-sm text-muted-foreground leading-relaxed',
 
-       'footer-shortcut': 'mt-auto py-10 text-center border-t border-border text-muted-foreground text-sm bg-background',
+       'footer-shortcut': 'mt-auto py-10 text-center border-t border-border text-muted-foreground text-sm',
       'footer-container': 'max-w-4xl mx-auto px-4',
       'footer-text': 'mb-2',
       'footer-links-space': 'flex flex-wrap justify-center gap-x-4 gap-y-2 underline underline-offset-4 text-sm font-medium text-foreground underline underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground', // gap-x-8 provides wide space
@@ -70,8 +70,9 @@ export default defineConfig({
       focus-visible:ring-2 focus-visible:ring-offset-2 
       disabled:pointer-events-none disabled:opacity-50 
       border border-border bg-background hover:bg-accent hover:text-accent-foreground 
-      h-10 w-10 active:scale-95
+      h-10 w-10 active:scale-95 border-none bg-transparent shadow-none
     `,
+    'options-btn': 'fixed top-6 right-6 z-50 flex items-center gap-1 p-1 rounded-lg border border-border bg-background/80 backdrop-blur shadow-sm select-none',
     'separator': 'w-[1px] h-6 bg-border mx-1',
     // The "Pill" look for dropdown items
     'dropdown-menu': `
@@ -190,6 +191,10 @@ export default defineConfig({
         /* Ensure children (the menu) aren't clipped */
         overflow: visible !important; 
       }
+
+      [x-cloak] { 
+    display: none !important; 
+      }     
 
       `,
     },

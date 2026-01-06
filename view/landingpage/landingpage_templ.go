@@ -70,7 +70,7 @@ func Show(lang string, content model.Content) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</p>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</p><div class=\"flex justify-center items-center\"><img src=\"/assets/png/mockup-iphone-17-pro-desert-titanium.png\" alt=\"Classic App Mockup\" class=\"block w-[40%] h-auto\" loading=\"eager\"></div><div class=\"py-8\"></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

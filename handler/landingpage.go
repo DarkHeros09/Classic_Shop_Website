@@ -4,6 +4,8 @@ import (
 	"cshop-website/view/landingpage"
 
 	"github.com/gofiber/fiber/v2"
+
+	"cshop-website/utils"
 )
 
 type LandingPageHandler struct{}
@@ -18,12 +20,12 @@ func (l *LandingPageHandler) HandlerLandingPageShow(ctx *fiber.Ctx) error {
 	}
 
 	// 2. Fetch the correct content
-	content, ok := translations[lang]
+	content, ok := utils.Translations[lang]
 	if !ok {
-		content = translations["ar"] // Fallback
+		content = utils.Translations["ar"] // Fallback
 	}
 
 	// 3. Set the Content-Type to HTML and render the Templ component
 	ctx.Set("Content-Type", "text/html")
-	return render(ctx, landingpage.Show(lang, content))
+	return utils.Render(ctx, landingpage.Show(lang, content))
 }
