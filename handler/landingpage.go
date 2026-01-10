@@ -20,9 +20,9 @@ func (l *LandingPageHandler) HandlerLandingPageShow(ctx *fiber.Ctx) error {
 	}
 
 	// 2. Fetch the correct content
-	content, ok := utils.Translations[lang]
+	content, ok := utils.LandingPage[lang]
 	if !ok {
-		content = utils.Translations["ar"] // Fallback
+		content = utils.LandingPage["ar"] // Fallback
 	}
 
 	// 3. Set the Content-Type to HTML and render the Templ component

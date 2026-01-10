@@ -18,9 +18,9 @@ func (l *TermsOfUsePageHandler) HandlerTermsOfUsePageShow(ctx *fiber.Ctx) error 
 	}
 
 	// 2. Fetch the correct content
-	content, ok := utils.Translations[lang]
+	content, ok := utils.LandingPage[lang]
 	if !ok {
-		content = utils.Translations["ar"] // Fallback
+		content = utils.LandingPage["ar"] // Fallback
 	}
 
 	// 2. Fetch the correct content

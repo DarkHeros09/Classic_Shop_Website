@@ -88,7 +88,7 @@ func Show(lang string, content model.Content, privacyPolicy model.PrivacyPageDat
 				return templ_7745c5c3_Err
 			}
 			for _, section := range privacyPolicy.Sections {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<section class=\"group\"><h2 class=\"text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300 font-sans\">")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<section class=\"group\"><h2 class=\"text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}

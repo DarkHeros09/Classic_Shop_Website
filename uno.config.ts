@@ -40,7 +40,7 @@ export default defineConfig({
       'app-stores': 'flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 w-full mx-auto md:mx-0',
       'section-sub-hero': 'py-20',
       'container-sub-main': 'max-w-6xl mx-auto px-6',
-      'app-features-cards': 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
+      'app-features-cards': 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
       'feature-card': 'p-6 rounded-xl border border-border bg-card text-card-foreground shadow-sm hover:bg-accent hover:text-accent-foreground transition-all duration-200',
       'feature-card-emoji': 'text-4xl block mb-4',
       'feature-card-text': 'text-lg font-bold mb-2',
