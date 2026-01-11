@@ -17,6 +17,7 @@ import (
 func RunStaticGenerator() {
 	fmt.Println("🏗️  Starting Static Site Generation...")
 	outputDir := "dist"
+	nojekyll := filepath.Join(outputDir, ".nojekyll")
 	langs := []string{"en", "ar"}
 
 	// 1. Clear and recreate dist folder
@@ -41,13 +42,21 @@ func RunStaticGenerator() {
 		os.MkdirAll(basePath, 0755)
 		os.MkdirAll(filepath.Join(basePath, "privacy"), 0755)
 		os.MkdirAll(filepath.Join(basePath, "terms"), 0755)
-
+		noJekyll(nojekyll)
 		saveHTML(filepath.Join(basePath, "index.html"), lang, "index")
 		saveHTML(filepath.Join(basePath, "privacy", "index.html"), lang, "privacy")
 		saveHTML(filepath.Join(basePath, "terms", "index.html"), lang, "terms")
 	}
 
 	fmt.Println("✅ Generation complete! Created in /dist folder.")
+}
+
+func noJekyll(file string) {
+	f, err := os.Create(file)
+	if err != nil {
+		log.Fatalf("Failed to create file %s: %v", file, err)
+	}
+	defer f.Close()
 }
 
 func saveHTML(targetPath string, lang string, pageType string) {
