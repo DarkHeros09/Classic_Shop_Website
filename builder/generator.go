@@ -72,7 +72,6 @@ func wranglerConfig(file string) {
 
 	config := `{
 	  "name": "classic-shop-website",
-	  "main": "./dist",
 	  "compatibility_date": "2026-01-11",
 	  "assets": {
 		"directory": "./dist"
