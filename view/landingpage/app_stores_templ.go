@@ -31,32 +31,32 @@ func appStores(lang string, content model.Content) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"app-stores\"><a href=\"#\" class=\"shrink-0\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"app-stores\"><a href=\"#\" class=\"app-store-badge\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if lang == "en" {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<img src=\"/assets/svg/GetItOnGooglePlay_Badge_Web_color_English.svg\" class=\"h-[64px] md:h-[80px] w-auto block\" alt=\"Get it on Google Play\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<img src=\"/assets/svg/GetItOnGooglePlay_Badge_Web_color_English.svg\" class=\"relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg\" alt=\"Get it on Google Play\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		} else {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<img src=\"/assets/svg/GetItOnGooglePlay_Badge_Web_color_Arabic-Saudi-Arabia.svg\" class=\"h-[64px] md:h-[80px] w-auto block\" alt=\"Get it on Google Play\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<img src=\"/assets/svg/GetItOnGooglePlay_Badge_Web_color_Arabic-Saudi-Arabia.svg\" class=\"relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg\" alt=\"احصل عليه من جوجل بلاي\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "</a> <a href=\"#\" class=\"shrink-0\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "</a> <a href=\"#\" class=\"app-store-badge\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if lang == "en" {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<img src=\"/assets/svg/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg\" class=\"h-[64px] md:h-[80px] w-auto block\" alt=\"Download on the App Store\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<img src=\"/assets/svg/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg\" class=\"relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg\" alt=\"Download on the App Store\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		} else {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "<img src=\"/assets/svg/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg\" class=\"h-[64px] md:h-[80px] w-auto block\" alt=\"Download on the App Store\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "<img src=\"/assets/svg/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg\" class=\"relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg\" alt=\"حمل من متجر التطبيقات\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

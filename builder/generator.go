@@ -81,12 +81,25 @@ func generateRootRedirect(outputDir string) {
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; url=./ar/">
     <link rel="canonical" href="./ar/">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="alternate" hreflang="en" href="https://classic-shop.ly/en" />
-    <link rel="alternate" hreflang="ar" href="https://classic-shop.ly/ar" />
-    <link rel="alternate" hreflang="x-default" href="https://classic-shop.ly/ar" />
-	<link rel="icon" type="image/png" href="/assets/png/logo.png" />
-    <title>Classic</title>
+    
+    <title>Classic Shop</title>
+    <meta name="description" content="Classic Shop - The ultimate destination for modern fashion. Download our app now on iOS and Android. | كلاسيك شوب - وجهتك المثالية للأزياء العصرية. حمل التطبيق الآن.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="alternate" hreflang="en" href="https://classic-shop.ly/en/" />
+    <link rel="alternate" hreflang="ar" href="https://classic-shop.ly/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://classic-shop.ly/ar/" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://classic-shop.ly/">
+    <meta property="og:title" content="Classic Shop | كلاسيك شوب">
+    <meta property="og:description" content="Modern fashion at your fingertips. Download Classic App.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Classic Shop">
+    <meta name="twitter:description" content="Modern fashion at your fingertips.">
+
+    <link rel="icon" type="image/png" href="/assets/png/logo.png" />
 </head>
 </html>`
 

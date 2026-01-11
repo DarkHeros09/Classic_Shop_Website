@@ -37,7 +37,8 @@ export default defineConfig({
       'app-name': 'text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-foreground text-center md:text-start',
       'app-description': 'text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed text-center md:text-start',
       // Cleaned up shortcut
-      'app-stores': 'flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 w-full mx-auto md:mx-0',
+      'app-stores': 'flex flex-col xl:flex-row gap-4 justify-start md:items-start lg:items-start items-center w-full',
+      'app-store-badge': `group relative block transition-all duration-300 active:scale-95 hover:scale-105 shrink-0`,
       'section-sub-hero': 'py-20',
       'container-sub-main': 'max-w-6xl mx-auto px-6',
       'app-features-cards': 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
@@ -48,7 +49,7 @@ export default defineConfig({
       'footer-shortcut': 'mt-auto py-10 text-center border-t border-border text-muted-foreground text-sm',
       'footer-container': 'max-w-4xl mx-auto px-4',
       'footer-text': 'mb-2',
-      'footer-links-space': 'flex flex-wrap justify-center gap-x-4 gap-y-2 underline underline-offset-4 text-sm font-medium text-foreground underline underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground',
+      'footer-links-space': 'flex flex-wrap justify-center gap-x-4 gap-y-2 underline underline-offset-4 text-sm font-medium text-foreground underline underline-offset-4 decoration-muted-foreground/40 -foreground',
       'control-btn': `
         inline-flex items-center justify-center rounded-md text-sm font-medium 
         ring-offset-background transition-colors focus-visible:outline-none 

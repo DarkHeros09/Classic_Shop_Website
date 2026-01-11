@@ -3,39 +3,40 @@ package landingpage
 import "cshop-website/model"
 
 templ appStores(lang string, content model.Content) {
-<div class="app-stores">
+    <div class="app-stores">
 
-    <a href="#" class="shrink-0">
-        if lang == "en" {
-            <img 
-            src="/assets/svg/GetItOnGooglePlay_Badge_Web_color_English.svg" 
-            class="h-[64px] md:h-[80px] w-auto block" 
-            alt="Get it on Google Play"
-        >
-        } else {
+        <a href="#" class="app-store-badge">
+            
+            if lang == "en" {
                 <img 
-            src="/assets/svg/GetItOnGooglePlay_Badge_Web_color_Arabic-Saudi-Arabia.svg" 
-            class="h-[64px] md:h-[80px] w-auto block" 
-            alt="Get it on Google Play"
-        >
-        }
-    </a>
+                    src="/assets/svg/GetItOnGooglePlay_Badge_Web_color_English.svg" 
+                    class="relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg" 
+                    alt="Get it on Google Play"
+                />
+            } else {
+                <img 
+                    src="/assets/svg/GetItOnGooglePlay_Badge_Web_color_Arabic-Saudi-Arabia.svg" 
+                    class="relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg" 
+                    alt="احصل عليه من جوجل بلاي"
+                />
+            }
+        </a>
 
-    <a href="#" class="shrink-0">
-        if lang == "en" {
-            <img 
-            src="/assets/svg/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-            class="h-[64px] md:h-[80px] w-auto block"
-            alt="Download on the App Store"
-        >
-        } else {
-             <img 
-            src="/assets/svg/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg"
-            class="h-[64px] md:h-[80px] w-auto block"
-            alt="Download on the App Store"
-        >
-        }
-    </a>
-
-</div>
+        <a href="#" class="app-store-badge">
+            
+            if lang == "en" {
+                <img 
+                    src="/assets/svg/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                    class="relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg"
+                    alt="Download on the App Store"
+                />
+            } else {
+                <img 
+                    src="/assets/svg/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg"
+                    class="relative h-[72px] xl:h-[80px] w-auto object-contain drop-shadow-lg"
+                    alt="حمل من متجر التطبيقات"
+                />
+            }
+        </a>
+    </div>
 }

@@ -16,7 +16,7 @@ templ Base(lang string, content model.Content, data ...any) {
 		x-effect="localStorage.setItem('theme', isDark ? 'dark' : 'light')"
 	>
 		<head>
-			@Header()
+			@Header(lang, content)
 		</head>
 		<body class="body-shortcut">
         

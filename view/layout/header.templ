@@ -1,26 +1,50 @@
 package layout
 
-templ Header() {
-    		<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<link rel="alternate" hreflang="en" href="https://classic-shop.ly/en" />
-    <link rel="alternate" hreflang="ar" href="https://classic-shop.ly/ar" />
-    <link rel="alternate" hreflang="x-default" href="https://classic-shop.ly/en" />
-            <link rel="icon" type="image/png" href="/assets/png/logo.png" />
-			<title>Classic</title>
-            <script defer src="/assets/js/cdn.min.js"></script>
-			<script>
-        // 1. Theme Logic: Apply 'dark' class immediately
+import "cshop-website/model"
+
+templ Header(lang string, content model.Content) {
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Classic Shop</title>
+    <meta name="description" content={ content.Description } />
+
+    <link rel="canonical" href={ "https://classic-shop.ly/" + lang + "/" } />
+
+    <link rel="alternate" hreflang="en" href="https://classic-shop.ly/en/" />
+    <link rel="alternate" hreflang="ar" href="https://classic-shop.ly/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://classic-shop.ly/ar/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ content.Title } />
+    <meta property="og:description" content={ content.Description } />
+    <meta property="og:url" content={ "https://classic-shop.ly/" + lang + "/" } />
+    if lang == "ar" {
+    <meta property="og:locale" content="ar_LY"/>   
+     } else {
+    <meta property="og:locale" content="en_US" />
+     } 
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ content.Title } />
+    <meta name="twitter:description" content={ content.Description } />
+
+    <link rel="icon" type="image/png" href="/assets/png/logo.png" />
+
+    <script defer src="/assets/js/cdn.min.js"></script>
+    <script>
         (function() {
             const theme = localStorage.getItem('theme');
-            if (theme === 'dark' || (!theme && true)) { // defaults to true (dark)
+            if (theme === 'dark' || (!theme && true)) {
                 document.documentElement.classList.add('dark');
             } else if (theme === 'light') {
                 document.documentElement.classList.remove('dark');
             }
         })();
     </script>
-            <link rel="stylesheet" href="/assets/css/input.css">
-			<link rel="preload" href="/assets/fonts/noto-kufi-arabic-regular.woff2" as="font" type="font/woff2" crossorigin />
-			<link rel="preload" href="/assets/fonts/noto-kufi-arabic-bold.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <link rel="stylesheet" href="/assets/css/input.css" />
+    
+    <link rel="preload" href="/assets/fonts/noto-kufi-arabic-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/noto-kufi-arabic-bold.woff2" as="font" type="font/woff2" crossorigin />
 }
