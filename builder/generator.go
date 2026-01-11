@@ -74,7 +74,7 @@ func wranglerConfig(file string) {
 	  "name": "classic-shop-website",
 	  "compatibility_date": "2026-01-11",
 	  "assets": {
-		"directory": "./assets"
+		"directory": "./"
 		}
 	}`
 	_, _ = f.WriteString(config)
