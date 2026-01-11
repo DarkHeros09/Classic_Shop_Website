@@ -108,7 +108,7 @@ func generateRootRedirect(outputDir string) {
     <meta name="twitter:title" content="Classic Shop">
     <meta name="twitter:description" content="Modern fashion at your fingertips.">
 
-    <link rel="icon" type="image/png" href="./assets/png/logo.png" />
+    <link rel="icon" type="image/png" href="/assets/png/logo.png" />
 </head>
 </html>`
 

@@ -13,7 +13,7 @@ import (
 func main() {
 	app := fiber.New()
 
-	app.Static("/assets", "./assets")
+	app.Static("/assets", "/assets")
 
 	app.Use(helmet.New(helmet.ConfigDefault))
 	app.Use(compress.New(compress.Config{
