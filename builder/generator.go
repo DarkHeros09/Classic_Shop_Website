@@ -18,6 +18,7 @@ func RunStaticGenerator() {
 	fmt.Println("🏗️  Starting Static Site Generation...")
 	outputDir := "dist"
 	nojekyll := filepath.Join(outputDir, ".nojekyll")
+	wrangler := filepath.Join(outputDir, "wrangler.jsonc")
 	langs := []string{"en", "ar"}
 
 	// 1. Clear and recreate dist folder
@@ -42,7 +43,10 @@ func RunStaticGenerator() {
 		os.MkdirAll(basePath, 0755)
 		os.MkdirAll(filepath.Join(basePath, "privacy"), 0755)
 		os.MkdirAll(filepath.Join(basePath, "terms"), 0755)
+
 		noJekyll(nojekyll)
+		wranglerConfig(wrangler)
+
 		saveHTML(filepath.Join(basePath, "index.html"), lang, "index")
 		saveHTML(filepath.Join(basePath, "privacy", "index.html"), lang, "privacy")
 		saveHTML(filepath.Join(basePath, "terms", "index.html"), lang, "terms")
@@ -57,6 +61,24 @@ func noJekyll(file string) {
 		log.Fatalf("Failed to create file %s: %v", file, err)
 	}
 	defer f.Close()
+}
+
+func wranglerConfig(file string) {
+	f, err := os.Create(file)
+	if err != nil {
+		log.Fatalf("Failed to create file %s: %v", file, err)
+	}
+	defer f.Close()
+
+	config := `{
+	  "name": "cshop-website",
+	  "main": "./dist",
+	  "compatibility_date": "2026-01-11",
+	  "assets": {
+		"directory": "./dist"
+		}
+	}`
+	_, _ = f.WriteString(config)
 }
 
 func saveHTML(targetPath string, lang string, pageType string) {
