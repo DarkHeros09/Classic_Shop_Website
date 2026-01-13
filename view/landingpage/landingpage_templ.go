@@ -44,7 +44,7 @@ func Show(lang string, content model.Content) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"section-hero container-main\"><div class=\"hero-image-container\"><picture><img src=\"/assets/avif/mockup-iphone-17-pro-400.avif\" alt=\"Classic App Mockup\" class=\"block w-[80%] md:w-full max-w-[300px] h-auto mx-auto\" decoding=\"async\" loading=\"eager\" fetchpriority=\"high\"></picture></div><div class=\"hidden md:block md:w-8 shrink-0\"></div><div class=\"hero-content\"><h1 class=\"app-name\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"section-hero container-main\"><div class=\"hero-image-container\"><picture><source media=\"(max-width: 800px)\" srcset=\"/assets/avif/mockup-iphone-17-pro-800.avif\" type=\"image/avif\"> <source media=\"(max-width: 600px)\" srcset=\"/assets/avif/mockup-iphone-17-pro-600.avif\" type=\"image/avif\"> <img src=\"/assets/avif/mockup-iphone-17-pro-400.avif\" alt=\"Classic App Mockup\" class=\"block w-[80%] md:w-full h-auto mx-auto\" decoding=\"async\" loading=\"eager\" fetchpriority=\"high\"></picture></div><div class=\"hidden md:block md:w-8 shrink-0\"></div><div class=\"hero-content\"><h1 class=\"app-name\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
