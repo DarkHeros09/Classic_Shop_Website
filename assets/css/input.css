@@ -297,6 +297,7 @@
 .ease-out{transition-timing-function:cubic-bezier(0, 0, 0.2, 1);}
 @media (min-width: 768px){
 .md\:block{display:block;}
+.md\:max-w-none{max-width:none;}
 .md\:w-8{width:2rem;}
 .md\:w-full{width:100%;}
 .md\:p-12{padding:3rem;}
