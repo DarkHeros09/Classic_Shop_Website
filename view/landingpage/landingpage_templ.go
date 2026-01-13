@@ -44,14 +44,14 @@ func Show(lang string, content model.Content) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"section-hero container-main\"><div class=\"hero-image-container\"><picture><source media=\"(max-width: 800px)\" srcset=\"/assets/avif/mockup-iphone-17-pro-800.avif\" type=\"image/avif\"> <source media=\"(max-width: 600px)\" srcset=\"/assets/avif/mockup-iphone-17-pro-600.avif\" type=\"image/avif\"> <img src=\"/assets/avif/mockup-iphone-17-pro-400.avif\" alt=\"Classic App Mockup\" class=\"block w-[80%] md:w-full h-auto mx-auto\" decoding=\"async\" loading=\"eager\" fetchpriority=\"high\"></picture></div><div class=\"hidden md:block md:w-8 shrink-0\"></div><div class=\"hero-content\"><h1 class=\"app-name\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<section class=\"section-hero container-main\"><div class=\"hero-image-container\"><picture><source media=\"(min-width: 801px)\" srcset=\"/assets/avif/mockup-iphone-17-pro-800.avif\" type=\"image/avif\"> <source media=\"(min-width: 601px)\" srcset=\"/assets/avif/mockup-iphone-17-pro-600.avif\" type=\"image/avif\"> <img src=\"/assets/avif/mockup-iphone-17-pro-400.avif\" alt=\"Classic App Mockup\" class=\"block w-[80%] max-w-[300px] md:max-w-none md:w-full h-auto mx-auto\" width=\"400\" height=\"825\" decoding=\"async\" loading=\"eager\" fetchpriority=\"high\"></picture></div><div class=\"hidden md:block md:w-8 shrink-0\"></div><div class=\"hero-content\"><h1 class=\"app-name\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(content.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 36, Col: 20}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 38, Col: 20}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -64,7 +64,7 @@ func Show(lang string, content model.Content) templ.Component {
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(content.Description)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 39, Col: 26}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/landingpage/landingpage.templ`, Line: 41, Col: 26}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
