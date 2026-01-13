@@ -219,6 +219,7 @@
 .h-8{height:2rem;}
 .h-auto{height:auto;}
 .h-full{height:100%;}
+.max-w-\[300px\]{max-width:300px;}
 .max-w-4xl{max-width:56rem;}
 .max-w-lg{max-width:32rem;}
 .w-\[80\%\]{width:80%;}

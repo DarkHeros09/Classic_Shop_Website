@@ -8,20 +8,20 @@ templ Show(lang string, content model.Content) {
 		<section class="section-hero container-main">
 			<div class="hero-image-container">
     <picture>
-        <source 
-            media="(min-width: 1024px)" 
-            srcset="/assets/avif/mockup-iphone-17-pro-800.avif" 
-            type="image/avif" 
-        />
-        <source 
-            media="(min-width: 768px)" 
-            srcset="/assets/avif/mockup-iphone-17-pro-600.avif" 
-            type="image/avif" 
-        />
+        // <source 
+        //     media="(min-width: 1024px)" 
+        //     srcset="/assets/avif/mockup-iphone-17-pro-800.avif" 
+        //     type="image/avif" 
+        // />
+        // <source 
+        //     media="(min-width: 768px)" 
+        //     srcset="/assets/avif/mockup-iphone-17-pro-600.avif" 
+        //     type="image/avif" 
+        // />
         <img
             src="/assets/avif/mockup-iphone-17-pro-400.avif"
             alt="Classic App Mockup"
-            class="block w-[80%] md:w-full h-auto mx-auto"
+            class="block w-[80%] md:w-full max-w-[300px] h-auto mx-auto"
             decoding="async"
             loading="eager"
 			fetchpriority="high"
