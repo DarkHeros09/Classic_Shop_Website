@@ -38,7 +38,12 @@ export default defineConfig({
       'app-description': 'text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed text-center md:text-start',
       // Cleaned up shortcut
       'app-stores': 'flex flex-col xl:flex-row gap-4 justify-start md:items-start lg:items-start items-center w-full',
-      'app-store-badge': `group relative block transition-all duration-300 active:scale-95 hover:scale-105 shrink-0`,
+      'app-store-badge': `
+    group relative block shrink-0 select-none touch-manipulation transform-gpu 
+    transition-transform duration-200 ease-out 
+    [@media(hover:hover)]:hover:scale-105 [@media(hover:hover)]:hover:z-10
+    active:scale-90 active:duration-75
+`,
       'section-sub-hero': 'py-20',
       'container-sub-main': 'max-w-6xl mx-auto px-6',
       'app-features-cards': 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
