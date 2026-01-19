@@ -130,6 +130,8 @@ func generateRootRedirect(outputDir string) {
     <meta name="twitter:description" content="Modern fashion at your fingertips.">
 
     <link rel="icon" type="image/png" href="/assets/png/logo.png" />
+	<link rel="apple-touch-icon" href="/assets/png/logo.png">
+    <meta name="msapplication-TileImage" content="/assets/png/logo.png">
 	<link 
         rel="preload" 
         as="image" 
