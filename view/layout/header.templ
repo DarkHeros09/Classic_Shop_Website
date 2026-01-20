@@ -29,9 +29,9 @@ templ Header(lang string, content model.Content) {
     <meta name="twitter:title" content={ content.Title } />
     <meta name="twitter:description" content={ content.Description } />
 
-    <link rel="icon" type="image/png" href="/assets/png/logo.png" />
-    <link rel="apple-touch-icon" href="/assets/png/logo.png">
-    <meta name="msapplication-TileImage" content="/assets/png/logo.png">
+    <link rel="icon" type="image/png" href="/assets/png/logo-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/assets/png/logo-180x180.png" sizes="180x180">
+    <link rel="manifest" href="/assets/site.webmanifest">
 
     <script defer src="/assets/js/cdn.min.js"></script>
     <script>
@@ -45,12 +45,31 @@ templ Header(lang string, content model.Content) {
         })();
     </script>
     <link 
-        rel="preload" 
-        as="image" 
-        href="/assets/avif/mockup-iphone-17-pro-400.avif" 
-        fetchpriority="high"
-        type="image/avif"
-    />
+    rel="preload" 
+    as="image" 
+    href="/assets/avif/mockup-iphone-17-pro-800.avif" 
+    media="(min-width: 801px)"
+    type="image/avif"
+    fetchpriority="high"
+/>
+
+<link 
+    rel="preload" 
+    as="image" 
+    href="/assets/avif/mockup-iphone-17-pro-600.avif" 
+    media="(min-width: 601px) and (max-width: 800px)"
+    type="image/avif"
+    fetchpriority="high"
+/>
+
+<link 
+    rel="preload" 
+    as="image" 
+    href="/assets/avif/mockup-iphone-17-pro-400.avif" 
+    media="(max-width: 600px)"
+    type="image/avif"
+    fetchpriority="high"
+/>
     <link rel="preload" href="/assets/fonts/noto-kufi-arabic-regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/noto-kufi-arabic-bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/css/input.css" as="style">
